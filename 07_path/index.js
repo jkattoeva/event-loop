@@ -15,5 +15,20 @@ console.log(path.basename(directoryPath)) //folder
 console.log(path.dirname(filePath)) ///users/janetta/Desktop/node
 console.log(path.dirname(directoryPath)) // ./node
 
+console.log(path.resolve(relativePath)) // e:\Desktop\node\node\movie.mov
 
+console.log(path.extname(textPath)) // .txt
+console.log(path.extname(directoryPath)) //
 
+console.log(path.parse(filePath)) // {
+//   root: '/',
+//   dir: '/users/janetta/Desktop/node',
+//   base: 'index.js',
+//   ext: '.js',
+//   name: 'index'
+// }
+
+const parsedPath = path.parse(filePath)
+
+console.log(filePath) // /users/janetta/Desktop/node/index.js
+console.log(path.join(parsedPath.dir, `renamed-${parsedPath.name}.mjs`)) // \users\janetta\Desktop\node\renamed-index.mjs
