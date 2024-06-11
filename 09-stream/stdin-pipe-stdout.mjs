@@ -1,5 +1,5 @@
 import stream, { Transform } from 'stream'
-import fs, { futimes } from 'fs'
+import fs from 'fs'
 
 const upperCaseStream = new Transform({
   transform: function (chunk, encoding, cb) {
@@ -12,7 +12,7 @@ const reversedCaseStream = new Transform({
   transform(chunk, encoding, cb) {
     const arrayOfCharse = chunk.toString().split('')
     const lastChar = arrayOfCharse.pop()
-    const reversed = arrayOfCharse.reverse().concat(lastChar).join('') // remove the enter 
+    const reversed = arrayOfCharse.reverse().concat(lastChar).join('') // remove the enter
     cb(null, reversed)
   },
 })
