@@ -4,6 +4,8 @@ import fs from 'fs'
 
 const server = http.createServer((req, res) => {
   const filePath = './files/index.html'
+
+  //with streams
   if (req.url === '/' && req.method === 'GET') {
     const readStream = fs.createReadStream(filePath)
 
@@ -11,8 +13,10 @@ const server = http.createServer((req, res) => {
     res.setHeader('Content-Type', 'text/html')
     readStream.pipe(res)
   }
+
+  // without streams   . We read entire file and then send it to the client
   if (req.url === '/no-stream' && req.method === 'GET') {
-    fs.readFile(filePath , (err, data) => {
+    fs.readFile(filePath, (err, data) => {
       if (err) {
         res.statusCode === 500
         res.end('error reading file on server')
