@@ -28,7 +28,7 @@ for (let i = 1; i <= linesQty; i++) {
 
 writeStream.end(() => {
   console.log(
-    `Automaticcaly generated file ${fileName} was created successfully`
+    `Automaticcaly generated file ${fileName} with ${linesQty} lines was created successfully`
   )
 })
 
