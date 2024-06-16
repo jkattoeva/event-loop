@@ -1,0 +1,23 @@
+{
+  "name": "first-npm",
+  "version": "1.0.0",
+  "description": "my first NPM project",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon index.js",
+    "test": "jest"
+  },
+  "keywords": [
+    "npm"
+  ],
+  "author": "Janetta",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.19.2"
+  },
+  "devDependencies": {
+    "jest": "^29.7.0",
+    "nodemon": "^3.1.3"
+  }
+}
